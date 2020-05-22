@@ -1,0 +1,80 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+## vim8用
+#[[plugins]]
+#repo = 'roxma/nvim-yarp'
+#if = "!has('nvim')"
+#
+## vim8用
+#[[plugins]]
+#repo = 'roxma/vim-hug-neovim-rpc'
+#if = "!has('nvim')"
+#
+#[[plugins]]
+#repo = 'Shougo/deoplete.nvim'
+#hook_add = '''
+#let g:deoplete#enable_at_startup = 1
+#'''
+
+#[[plugins]]
+#repo = 'autozimu/LanguageClient-neovim'
+#rev = 'next'
+#depends = ['deoplete.nvim']
+#build = 'bash install.sh'
+#hook_add = '''
+#set hidden
+#let g:LanguageClient_serverCommands = {
+#      \ 'cpp': ['clangd-7'],
+#      \ }
+#let g:LanguageClient_loadSettings = 1
+#let g:LanguageClient_hasSnippetSupport = 0
+#
+#set completefunc=LanguageClient#complete
+#
+#nnoremap K :call LanguageClient#textDocument_hover()<CR>
+#nnoremap F :call LanguageClient#textDocument_formatting()<CR>
+#'''
+
+#[[plugins]]
+#repo = 'prabirshrestha/async.vim'
+#
+#[[plugins]]
+#repo = 'prabirshrestha/vim-lsp'
+#hook_add = '''
+#if executable('clangd-7')
+#    au User lsp_setup call lsp#register_server({
+#        \ 'name': 'clangd',
+#        \ 'cmd': {server_info->['clangd-7']},
+#        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+#        \ })
+#endif
+#
+#let g:lsp_signs_enabled = 1         " enable signs
+#let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+#
+#let g:lsp_signs_error = {'text': '✗'}
+#let g:lsp_signs_warning = {'text': '‼'}
+#'''
+#
+#[[plugins]]
+#repo='prabirshrestha/asyncomplete.vim'
+#
+#[[plugins]]
+#repo='prabirshrestha/asyncomplete-lsp.vim'
+#
+#[[plugins]]
+#repo='prabirshrestha/asyncomplete-neosnippet.vim'
+#hook_add='''
+#call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+#    \ 'name': 'neosnippet',
+#    \ 'whitelist': ['*'],
+#    \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+#    \ }))
+#imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+#smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+#xmap <C-k>     <Plug>(neosnippet_expand_target)
+#'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
