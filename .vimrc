@@ -30,6 +30,7 @@ set listchars=tab:>\ ,trail:-
 set incsearch
 set hlsearch
 set colorcolumn=80
+set encoding=utf-8
 colorscheme elflord
 
 inoremap <C-c> <Esc>
