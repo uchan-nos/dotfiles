@@ -37,3 +37,33 @@ inoremap <C-c> <Esc>
 
 "for OpeLa language
 autocmd BufNewFile,BufRead *.opl  set filetype=go
+
+" for GNU global
+"map <C-h> :Gtags -f %<CR>
+"map <C-j> :GtagsCursor<CR>
+"map <C-n> :cn<CR>
+"map <C-p> :cp<CR>
+"set cscopeprg=gtags-cscope
+"if has('cscope')
+"  set cscopetag cscopeverbose
+"  if has('quickfix')
+"    set cscopequickfix=s-,c-,d-,i-,t-,e-
+"  endif
+"
+"  map <C-\> :cs find c <C-R>=expand("<cword>")<CR><CR>
+"endif
+" To use the default key/mouse mapping:
+let GtagsCscope_Auto_Map = 1
+" To ignore letter case when searching:
+"	let GtagsCscope_Ignore_Case = 1
+" To use absolute path name:
+"       let GtagsCscope_Absolute_Path = 1
+" To deterring interruption:
+"	let GtagsCscope_Keep_Alive = 1
+" If you hope auto loading:
+let GtagsCscope_Auto_Load = 1
+" Don't show warning if GTAGS not found
+let GtagsCscope_Quiet = 1
+" To use 'vim -t ', ':tag' and '<C-]>'
+set cscopetag
+set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
