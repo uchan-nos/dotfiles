@@ -34,3 +34,6 @@ set encoding=utf-8
 colorscheme elflord
 
 inoremap <C-c> <Esc>
+
+"for OpeLa language
+autocmd BufNewFile,BufRead *.opl  set filetype=go
