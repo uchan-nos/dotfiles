@@ -31,6 +31,7 @@ set incsearch
 set hlsearch
 set colorcolumn=80
 set encoding=utf-8
+set scrolloff=2
 colorscheme elflord
 
 inoremap <C-c> <Esc>
