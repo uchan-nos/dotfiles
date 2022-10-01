@@ -1,6 +1,9 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+[[plugins]]
+repo = 'vim-scripts/Align'
+
 ## vim8用
 #[[plugins]]
 #repo = 'roxma/nvim-yarp'
