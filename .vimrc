@@ -68,3 +68,11 @@ let GtagsCscope_Quiet = 1
 " To use 'vim -t ', ':tag' and '<C-]>'
 set cscopetag
 set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
+
+" WSL yank support
+if executable('clip.exe')
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system('iconv -t utf16 | clip.exe', @0) | endif
+    augroup END
+endif
