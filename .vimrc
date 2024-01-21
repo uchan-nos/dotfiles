@@ -76,3 +76,6 @@ if executable('clip.exe')
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system('iconv -t utf16 | clip.exe', @0) | endif
     augroup END
 endif
+
+" tokorom/vim-review
+let g:vim_review#include_filetypes = ['c', 'python']
