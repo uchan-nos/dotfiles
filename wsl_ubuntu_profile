@@ -26,8 +26,10 @@ if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [ -f "$(dirname ${BASH_SOURCE})/profile.d/PATH" ]; then
-  . "$(dirname ${BASH_SOURCE})/profile.d/PATH"
+profile_d="$(dirname $(readlink -f ${BASH_SOURCE}))/profile.d"
+
+if [ -f "$profile_d/PATH" ]; then
+  . "$profile_d/PATH"
 fi
 
 # SSH Agent begin
