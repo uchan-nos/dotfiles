@@ -1,0 +1,4 @@
+# <device>                   <dir>       <type> <options>                       <dump> <fsck>
+LABEL=cloudimg-rootfs        /           ext4   defaults                        0      0
+C:                           /mnt/c      drvfs  rw,noatime,metadata,uid=1000,gid=1000,umask=022,fmask=011 0 0
+/mnt/c/Users/uchan/wsl_home  /home/uchan drvfs  bind                            0      0
