@@ -1,0 +1,7 @@
+[user]
+	email = uchan@uchan.net
+	name = uchan-nos
+[core]
+	editor = vim
+[alias]
+	wd = diff --word-diff-regex=. --word-diff=color
