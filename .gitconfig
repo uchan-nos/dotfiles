@@ -2,6 +2,8 @@
 	email = uchan@uchan.net
 	name = uchan-nos
 [core]
+	autocrlf = false
 	editor = vim
+	fileMode = false
 [alias]
 	wd = diff --word-diff-regex=. --word-diff=color
