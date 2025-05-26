@@ -47,8 +47,12 @@ set listchars=tab:>\ ,trail:-
 set incsearch
 set hlsearch
 set colorcolumn=80
-set encoding=utf-8
 set scrolloff=2
+set encoding=utf-8
+set fileencoding=&encoding
+set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,euc-jp,default,latin
+set ambiwidth=double
+set modeline
 colorscheme ron_vim81
 
 inoremap <C-c> <Esc>
