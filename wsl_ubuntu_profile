@@ -32,6 +32,11 @@ if [ -f "$profile_d/PATH" ]; then
   . "$profile_d/PATH"
 fi
 
+# for other bin directories
+if [ -d "$HOME/.deno/bin" ]; then
+  PATH="$HOME/.deno/bin:$PATH"
+fi
+
 # SSH Agent begin
 env="$HOME/.ssh/agent.env"
 
