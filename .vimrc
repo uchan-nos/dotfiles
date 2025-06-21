@@ -55,6 +55,9 @@ set ambiwidth=double
 set modeline
 colorscheme ron_vim81
 
+" エンコーディングの自動検出
+set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+
 inoremap <C-c> <Esc>
 
 "for OpeLa language
