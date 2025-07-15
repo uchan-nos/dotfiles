@@ -49,14 +49,13 @@ set hlsearch
 set colorcolumn=80
 set scrolloff=2
 set encoding=utf-8
-set fileencoding=&encoding
-set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,euc-jp,default,latin
+"set fileencoding=utf-8
 set ambiwidth=double
 set modeline
 colorscheme ron_vim81
 
 " エンコーディングの自動検出
-set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
+set fileencodings=ucs-bom,utf-8,iso-2022-jp,sjis,euc-jp,default,latin
 
 inoremap <C-c> <Esc>
 
