@@ -96,7 +96,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 if executable('clip.exe')
     augroup WSLYank
         autocmd!
-        autocmd TextYankPost * if v:event.operator ==# 'y' | call system('iconv -t utf16 | clip.exe', @0) | endif
+        autocmd TextYankPost * :call system('clip.exe', @0)
     augroup END
 endif
 
