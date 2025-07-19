@@ -63,19 +63,20 @@ inoremap <C-c> <Esc>
 autocmd BufNewFile,BufRead *.opl  set filetype=go
 
 " for GNU global
-"map <C-h> :Gtags -f %<CR>
-"map <C-j> :GtagsCursor<CR>
-"map <C-n> :cn<CR>
-"map <C-p> :cp<CR>
-"set cscopeprg=gtags-cscope
-"if has('cscope')
-"  set cscopetag cscopeverbose
-"  if has('quickfix')
-"    set cscopequickfix=s-,c-,d-,i-,t-,e-
-"  endif
-"
-"  map <C-\> :cs find c <C-R>=expand("<cword>")<CR><CR>
-"endif
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+set cscopeprg=gtags-cscope
+if has('cscope')
+  set cscopetag cscopeverbose
+  if has('quickfix')
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+  endif
+
+  map <C-\> :cs find c <C-R>=expand("<cword>")<CR><CR>
+endif
+
 " To use the default key/mouse mapping:
 let GtagsCscope_Auto_Map = 1
 " To ignore letter case when searching:
