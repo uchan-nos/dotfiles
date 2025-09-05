@@ -97,7 +97,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 if executable('clip.exe')
     augroup WSLYank
         autocmd!
-        autocmd TextYankPost * :call system('clip.exe', @0)
+        autocmd TextYankPost * :call system('clip.exe', iconv(@0, 'utf-8', 'shift-jis'))
     augroup END
 endif
 
