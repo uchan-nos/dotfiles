@@ -62,8 +62,8 @@ fi
 unset env
 # SSH Agent end
 
-if [ -f "$HOME/.cargo/env" ]; then
-  . "$HOME/.cargo/env"
+if [ -d "$HOME/.cargo/bin" ]; then
+  PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 . /etc/lsb-release
