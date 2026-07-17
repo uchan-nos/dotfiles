@@ -94,12 +94,15 @@ set cscopetag
 set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 
 " WSL yank support
-if executable('clip.exe')
-    augroup WSLYank
-        autocmd!
-        autocmd TextYankPost * :call system('clip.exe', iconv(@0, 'utf-8', 'shift-jis'))
-    augroup END
-endif
+" OSC52 をサポートするターミナル（Windows Terminal など）しか使えない
+function! ClipOsc52() abort
+  let text = join(v:event.regcontents, "\n")
+  call system('clip-osc52', text)
+endfunction
+augroup WSLYank
+  autocmd!
+  autocmd TextYankPost * call ClipOsc52()
+augroup END
 
 " tokorom/vim-review
 let g:vim_review#include_filetypes = ['c', 'python']

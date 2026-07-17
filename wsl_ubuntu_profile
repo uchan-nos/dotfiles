@@ -8,6 +8,8 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+export LANG=ja_JP.utf8
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
   # include .bashrc if it exists
@@ -72,3 +74,8 @@ PS1="\[\e]0;\u@${DISTRIB_RELEASE}: \w\a\]\${debian_chroot:+(\$debian_chroot)}\[\
 
 export EDITOR=vim
 export BROWSER=$HOME/bin/win-chrome
+
+if [ "$DISPLAY" = "" ]; then
+  WIN_HOST_IPV4=$(powershell.exe -NoProfile -Command "Get-NetIPAddress -AddressFamily IPv4 -AddressState Preferred | Where-Object { \$_.InterfaceAlias -Like 'イーサネット*' } | Select-Object -First 1 -ExpandProperty IPAddress")
+  export DISPLAY=$(echo $WIN_HOST_IPV4 | tr -d '\r\n'):0
+fi
