@@ -95,13 +95,19 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-,a-
 
 " WSL yank support
 " OSC52 をサポートするターミナル（Windows Terminal など）しか使えない
-function! ClipOsc52() abort
-  let text = join(v:event.regcontents, "\n")
-  call system('clip-osc52', text)
+function! Osc52Copy(text) abort
+  "str2blob は比較的新しい関数で、Ubuntu 24.04 の vim では使えない
+  "let encoded = a:text->str2blob()->base64_encode()
+  let encoded = system('base64 -w0', a:text)
+  call echoraw("\<Esc>]52;c;" .. encoded .. "\<Esc>\\")
 endfunction
+
 augroup WSLYank
   autocmd!
-  autocmd TextYankPost * call ClipOsc52()
+  autocmd TextYankPost *
+        \ if v:event.operator ==# 'y' |
+        \   call Osc52Copy(join(v:event.regcontents, "\n")) |
+        \ endif
 augroup END
 
 " tokorom/vim-review
